@@ -1,0 +1,63 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <ns13:consultarMargemResponse xmlns:ns13="HostaHostService">
+         <ns13:sucesso>true</ns13:sucesso>
+         <ns13:codRetorno>360</ns13:codRetorno>
+         <ns13:mensagem>Operação realizada com sucesso.</ns13:mensagem>
+         <ns13:infoMargem>
+            <ns6:estabelecimentoCodigo xmlns:ns6="InfoMargem">003</ns6:estabelecimentoCodigo>
+            <ns6:estabelecimento xmlns:ns6="InfoMargem">INSTITUTO DE PREVIDENCIA E ASSIST DOS SERVIDORES DO ESTADO DO ESPÍRITO SANTO</ns6:estabelecimento>
+            <ns6:orgaoCodigo xmlns:ns6="InfoMargem">028</ns6:orgaoCodigo>
+            <ns6:orgao xmlns:ns6="InfoMargem">INSTITUTO DE PREVIDENCIA E ASSISTENCIA DOS SERVIDORES DO ESTADO DO ESPIRITO SANTO - IPAJM/PREV</ns6:orgao>
+            <ns6:categoria xmlns:ns6="InfoMargem">COMISSIONADO</ns6:categoria>
+            <ns6:servidor xmlns:ns6="InfoMargem">AMANDA DE PAULA</ns6:servidor>
+            <ns6:cpf xmlns:ns6="InfoMargem">721.317.614-57</ns6:cpf>
+            <ns6:matricula xmlns:ns6="InfoMargem">2968715100</ns6:matricula>
+            <ns6:dataAdmissao xmlns:ns6="InfoMargem">1950-09-30-03:00</ns6:dataAdmissao>
+            <ns6:prazoServidor xmlns:ns6="InfoMargem">0</ns6:prazoServidor>
+            <ns6:valorMargem xmlns:ns6="InfoMargem">5357.7</ns6:valorMargem>
+            <ns6:textoMargem xmlns:ns6="InfoMargem"/>
+            <ns6:valorMargem2 xsi:nil="1" xmlns:ns6="InfoMargem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns6:textoMargem2 xmlns:ns6="InfoMargem"/>
+            <ns6:valorMargem3 xsi:nil="1" xmlns:ns6="InfoMargem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns6:textoMargem3 xmlns:ns6="InfoMargem"/>
+         </ns13:infoMargem>
+         <ns13:infoMargem>
+            <ns6:estabelecimentoCodigo xmlns:ns6="InfoMargem">003</ns6:estabelecimentoCodigo>
+            <ns6:estabelecimento xmlns:ns6="InfoMargem">INSTITUTO DE PREVIDENCIA E ASSIST DOS SERVIDORES DO ESTADO DO ESPÍRITO SANTO</ns6:estabelecimento>
+            <ns6:orgaoCodigo xmlns:ns6="InfoMargem">028</ns6:orgaoCodigo>
+            <ns6:orgao xmlns:ns6="InfoMargem">INSTITUTO DE PREVIDENCIA E ASSISTENCIA DOS SERVIDORES DO ESTADO DO ESPIRITO SANTO - IPAJM/PREV</ns6:orgao>
+            <ns6:categoria xmlns:ns6="InfoMargem">SUBMETIDO</ns6:categoria>
+            <ns6:servidor xmlns:ns6="InfoMargem">AMANDA DE PAULA</ns6:servidor>
+            <ns6:cpf xmlns:ns6="InfoMargem">721.317.614-57</ns6:cpf>
+            <ns6:matricula xmlns:ns6="InfoMargem">2968715200</ns6:matricula>
+            <ns6:dataAdmissao xmlns:ns6="InfoMargem">2010-10-01-03:00</ns6:dataAdmissao>
+            <ns6:prazoServidor xmlns:ns6="InfoMargem">0</ns6:prazoServidor>
+            <ns6:valorMargem xmlns:ns6="InfoMargem">4829.55</ns6:valorMargem>
+            <ns6:textoMargem xmlns:ns6="InfoMargem"/>
+            <ns6:valorMargem2 xsi:nil="1" xmlns:ns6="InfoMargem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns6:textoMargem2 xmlns:ns6="InfoMargem"/>
+            <ns6:valorMargem3 xsi:nil="1" xmlns:ns6="InfoMargem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns6:textoMargem3 xmlns:ns6="InfoMargem"/>
+         </ns13:infoMargem>
+         <ns13:infoMargem>
+            <ns6:estabelecimentoCodigo xmlns:ns6="InfoMargem">001</ns6:estabelecimentoCodigo>
+            <ns6:estabelecimento xmlns:ns6="InfoMargem">SECRETARIA DE ESTADO DE GESTÃO E RECURSOS HUMANOS</ns6:estabelecimento>
+            <ns6:orgaoCodigo xmlns:ns6="InfoMargem">013</ns6:orgaoCodigo>
+            <ns6:orgao xmlns:ns6="InfoMargem">SECRETARIA DE ESTADO DA EDUCAÇÃO</ns6:orgao>
+            <ns6:categoria xmlns:ns6="InfoMargem">SUBMETIDO</ns6:categoria>
+            <ns6:servidor xmlns:ns6="InfoMargem">AMANDA DE PAULA</ns6:servidor>
+            <ns6:cpf xmlns:ns6="InfoMargem">721.317.614-57</ns6:cpf>
+            <ns6:matricula xmlns:ns6="InfoMargem">2968715200</ns6:matricula>
+            <ns6:dataAdmissao xmlns:ns6="InfoMargem">2009-12-02-02:00</ns6:dataAdmissao>
+            <ns6:prazoServidor xmlns:ns6="InfoMargem">0</ns6:prazoServidor>
+            <ns6:valorMargem xmlns:ns6="InfoMargem">7000.0</ns6:valorMargem>
+            <ns6:textoMargem xmlns:ns6="InfoMargem"/>
+            <ns6:valorMargem2 xsi:nil="1" xmlns:ns6="InfoMargem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns6:textoMargem2 xmlns:ns6="InfoMargem"/>
+            <ns6:valorMargem3 xsi:nil="1" xmlns:ns6="InfoMargem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+            <ns6:textoMargem3 xmlns:ns6="InfoMargem"/>
+         </ns13:infoMargem>
+      </ns13:consultarMargemResponse>
+   </soapenv:Body>
+</soapenv:Envelope>

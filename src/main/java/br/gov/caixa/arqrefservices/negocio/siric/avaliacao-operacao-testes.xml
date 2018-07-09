@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<avaliacao_risco_credito:SERVICO_SAIDA
+	xmlns:avaliacao_risco_credito="http://caixa.gov.br/sibar/avaliacao_risco_credito"
+	xmlns:tns="http://br.unisys.com/siaci-messages/1.0.0" xmlns:sibar_base="http://caixa.gov.br/sibar"
+	xmlns:NS1="http://caixa.gov.br/sibar/SIRIC"
+	xmlns:cancelamento_avaliacao_risco="http://caixa.gov.br/sibar/cancelamento_avaliacao_risco"
+	xmlns:consulta_avaliacao_risco="http://caixa.gov.br/sibar/consulta_avaliacao_risco"
+	xmlns:desbloqueioalcada="http://caixa.gov.br/sibar/desbloqueio_alcada"
+	xmlns:propagacao_avaliacao_risco="http://caixa.gov.br/sibar/propagacao_avaliacao_risco"
+	xmlns:relatorio_avaliacao_risco="http://caixa.gov.br/sibar/relatorio_avaliacao_risco"
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sibar_base:HEADER>
+		<VERSAO>1.0</VERSAO>
+		<AUTENTICACAO>MA==</AUTENTICACAO>
+		<USUARIO_SERVICO>SCNLFECD</USUARIO_SERVICO>
+		<USUARIO>c891974</USUARIO>
+		<OPERACAO>AVALIACAORISCOCREDITO_PROTOCOLO</OPERACAO>
+		<INDICE>0</INDICE>
+		<SISTEMA_ORIGEM>SICCR</SISTEMA_ORIGEM>
+		<UNIDADE>0</UNIDADE>
+		<DATA_HORA>20180516</DATA_HORA>
+		<ID_PROCESSO>AVALIACAO_RISCO_CREDITO</ID_PROCESSO>
+	</sibar_base:HEADER>
+	<COD_RETORNO>00</COD_RETORNO>
+	<ORIGEM_RETORNO>SIBAR</ORIGEM_RETORNO>
+	<MSG_RETORNO>SOLICITACAO BEM SUCEDIDA</MSG_RETORNO>
+	<DADOS>
+		<PROTOCOLO>
+			<AVALIACAO>
+				<PROPOSTA>00000000</PROPOSTA>
+				<AGENCIA>7259</AGENCIA>
+				<PRODUTO>200000110</PRODUTO>
+			</AVALIACAO>
+		</PROTOCOLO>
+	</DADOS>
+</avaliacao_risco_credito:SERVICO_SAIDA>

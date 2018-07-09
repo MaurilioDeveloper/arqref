@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:hos="HostaHostService">
+	<soapenv:Header />
+	<soapenv:Body>
+		<hos:consultarMargem>
+			<hos:cliente>CEF</hos:cliente>
+			<hos:convenio>CEF-BAURU</hos:convenio>
+			<hos:usuario>cef_xml</hos:usuario>
+			<hos:senha>cef12345</hos:senha>
+			<hos:matricula>27594</hos:matricula>
+			<hos:cpf>541.878.673-33</hos:cpf>
+			<hos:valorParcela>19350.16</hos:valorParcela>
+			<hos:matriculaMultipla>false</hos:matriculaMultipla>
+		</hos:consultarMargem>
+	</soapenv:Body>
+</soapenv:Envelope>

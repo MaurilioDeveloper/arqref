@@ -1,0 +1,3 @@
+Dependencies: deployment.framework.jar,
+ 								deployment.framework_seguranca.jar,
+ 								deployment.wmq.jmsra.rar

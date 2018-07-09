@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<consulta_avaliacao_risco:SERVICO_SAIDA
+	xmlns:consulta_avaliacao_risco="http://caixa.gov.br/sibar/consulta_avaliacao_risco"
+	xmlns:tns="http://br.unisys.com/siaci-messages/1.0.0" xmlns:sibar_base="http://caixa.gov.br/sibar"
+	xmlns:NS1="http://caixa.gov.br/sibar/SIRIC"
+	xmlns:avaliacao_risco_credito="http://caixa.gov.br/sibar/avaliacao_risco_credito"
+	xmlns:cancelamento_avaliacao_risco="http://caixa.gov.br/sibar/cancelamento_avaliacao_risco"
+	xmlns:desbloqueioalcada="http://caixa.gov.br/sibar/desbloqueio_alcada"
+	xmlns:propagacao_avaliacao_risco="http://caixa.gov.br/sibar/propagacao_avaliacao_risco"
+	xmlns:relatorio_avaliacao_risco="http://caixa.gov.br/sibar/relatorio_avaliacao_risco"
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<sibar_base:HEADER>
+		<VERSAO>1.0</VERSAO>
+		<USUARIO_SERVICO>SCNLFECD</USUARIO_SERVICO>
+		<USUARIO>SEMPDB01</USUARIO>
+		<OPERACAO>CONSULTAAVALIACAORISCOCREDITO</OPERACAO>
+		<INDICE>0</INDICE>
+		<SISTEMA_ORIGEM>SIFEC</SISTEMA_ORIGEM>
+		<UNIDADE>0</UNIDADE>
+		<DATA_HORA>20180516</DATA_HORA>
+		<ID_PROCESSO>CONSULTAAVALIACAORISCOCREDITO</ID_PROCESSO>
+	</sibar_base:HEADER>
+	<COD_RETORNO>00</COD_RETORNO>
+	<ORIGEM_RETORNO>SIRIC</ORIGEM_RETORNO>
+	<MSG_RETORNO></MSG_RETORNO>
+	<DADOS>
+		<CONSULTA>
+			<MENSAGEM_RETORNO>
+				<PROPOSTA>00000000</PROPOSTA>
+				<CLIENTE>
+					<CPF>14269072814</CPF>
+				</CLIENTE>
+				<PRODUTO>0</PRODUTO>
+				<IDENTIFICADOR_MENSAGEM>14</IDENTIFICADOR_MENSAGEM>
+			</MENSAGEM_RETORNO>
+		</CONSULTA>
+	</DADOS>
+</consulta_avaliacao_risco:SERVICO_SAIDA>

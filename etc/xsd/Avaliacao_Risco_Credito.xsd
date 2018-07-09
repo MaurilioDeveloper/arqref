@@ -1,0 +1,2002 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://caixa.gov.br/sibar/avaliacao_risco_credito" xmlns:avaliacao_risco_credito="http://caixa.gov.br/sibar/avaliacao_risco_credito" xmlns:sibar_base="http://caixa.gov.br/sibar">
+    <xsd:import namespace="http://caixa.gov.br/sibar" schemaLocation="./MensagensBarramento.xsd"/>
+    <xsd:complexType name="servicoentrada_dados_cliente">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="TP_PESSOA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:totalDigits value="1"/>
+            <xsd:maxInclusive value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:choice>
+        <xsd:element name="CPF">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:maxInclusive value="99999999999999"/>
+              <xsd:totalDigits value="14"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="CNPJ">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:maxInclusive value="99999999999999"/>
+              <xsd:totalDigits value="14"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:choice>
+      <xsd:element minOccurs="0" name="NOME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DT_NASCIMENTO" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SEXO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9"/>
+            <xsd:totalDigits value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="NACIONALIDADE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:totalDigits value="2"/>
+            <xsd:maxInclusive value="99"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="NATURALIDADE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:maxInclusive value="99999999"/>
+            <xsd:totalDigits value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="FILIACAO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_filiacao"/>
+      <xsd:element minOccurs="0" name="IDENTIDADE" type="avaliacao_risco_credito:servicoentrada_dados_cliente_identidade"/>
+      <xsd:element minOccurs="0" name="ESTADO_CIVIL">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="GRAU_INSTRUCAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CONJUGE" type="avaliacao_risco_credito:servicoentrada_dados_cliente_conjuge"/>
+      <xsd:element minOccurs="0" name="CARTEIRA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="100" minOccurs="0" name="ENDERECO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_endereco"/>
+      <xsd:element minOccurs="0" name="RENDAS" type="avaliacao_risco_credito:servicoentrada_dados_cliente_rendas"/>
+      <xsd:element minOccurs="0" name="PATRIMONIO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_patrimonio"/>
+      <xsd:element minOccurs="0" name="APLICACOES" type="avaliacao_risco_credito:servicoentrada_dados_cliente_aplicacoes"/>
+      <xsd:element minOccurs="0" name="COMP_FINANCEIROS" type="avaliacao_risco_credito:servicoentrada_dados_cliente_comp_financeiros"/>
+      <xsd:element minOccurs="0" name="DESPESAS" type="avaliacao_risco_credito:servicoentrada_dados_cliente_despesas"/>
+      <xsd:element maxOccurs="10" minOccurs="0" name="DEPENDENTES" type="avaliacao_risco_credito:servicoentrada_dados_cliente_dependentes"/>
+      <xsd:element minOccurs="0" name="AUTO_FINANCIAMENTOS" type="avaliacao_risco_credito:servicoentrada_dados_cliente_auto_financiamentos"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_filiacao">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="PAI">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="40"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="MAE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="40"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_identidade">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="NUMERO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="15"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ORGAO_EMISSOR">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="UF">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DT_EMISSAO" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_conjuge">
+    <xsd:sequence>
+      <xsd:element name="CPF">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="99999999999999"/>
+            <xsd:totalDigits value="14"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="NOME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="DT_NASCIMENTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:maxInclusive value="99999999"/>
+            <xsd:totalDigits value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_endereco">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="CEP">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:maxInclusive value="99999999"/>
+            <xsd:totalDigits value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="LOGRADOURO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="45"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="NUMERO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="COMPLEMENTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="BAIRRO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MUNICIPIO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:maxInclusive value="99999999"/>
+            <xsd:totalDigits value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="UF">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SITUACAO_RESIDENCIA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element minOccurs="0" name="CONTATOS" type="avaliacao_risco_credito:servicoentrada_dados_cliente_contatos"/>
+        </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_contatos">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TELEFONE_CELULAR" type="avaliacao_risco_credito:servicoentrada_telefone_type"/>
+      <xsd:element minOccurs="0" name="TELEFONE_RESIDENCIAL" type="avaliacao_risco_credito:servicoentrada_telefone_type"/>
+      <xsd:element minOccurs="0" name="TELEFONE_RECADOS" type="avaliacao_risco_credito:servicoentrada_telefone_type"/>
+      <xsd:element minOccurs="0" name="EMAIL">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="40"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_telefone_type">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="DDD">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="999"/>
+            <xsd:totalDigits value="3"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="NUMERO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="999999999"/>
+            <xsd:totalDigits value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_rendas">
+    <xsd:sequence>
+      <xsd:element maxOccurs="100" minOccurs="0" name="COMPROVADA" type="avaliacao_risco_credito:servicoentrada_dados_cliente_rendas_comprovada"/>
+      <xsd:element maxOccurs="100" minOccurs="0" name="NAO_COMPROVADA" type="avaliacao_risco_credito:servicoentrada_dados_cliente_rendas_nao_comprovada"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_rendas_comprovada">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="FONTE_PAGADORA" type="avaliacao_risco_credito:servicoentrada_dados_cliente_rendas_comprovada_fonte_pag"/>
+      <xsd:element form="unqualified" minOccurs="0" name="COD_OCUPACAO" type="xsd:int">
+            </xsd:element>
+      <xsd:element minOccurs="0" name="DT_INICIO" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_RENDA_BRUTA">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="11"/>
+            <xsd:maxInclusive value="999999999.99"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element minOccurs="0" name="VR_RENDA_LIQUIDA">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:totalDigits value="11"/>
+            <xsd:fractionDigits value="2"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element minOccurs="0" name="COMPROVANTE" type="avaliacao_risco_credito:servicoentrada_dados_cliente_rendas_comprovada_comprovante"/>
+      <xsd:element minOccurs="0" name="VR_IMPOSTO_RETIDO">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="11"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element minOccurs="0" name="EMPREGO_ANTERIOR" type="avaliacao_risco_credito:servicoentrada_dados_cliente_rendas_comprovada_emprego_anterior"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_rendas_comprovada_fonte_pag">
+    <xsd:sequence>
+      <xsd:element minOccurs="1" name="TP_PESSOA_FONTE_PAGADORA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9"/>
+            <xsd:totalDigits value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:choice>
+        <xsd:element name="CPF">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:maxInclusive value="99999999999999"/>
+              <xsd:totalDigits value="14"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="CNPJ">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:maxInclusive value="99999999999999"/>
+              <xsd:totalDigits value="14"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:choice>
+      <xsd:element minOccurs="0" name="NOME">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ENDERECO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_rendas_comprovada_fonte_pag_endereco"/>
+      <xsd:element minOccurs="0" name="CONTATOS" type="avaliacao_risco_credito:servicoentrada_dados_cliente_rendas_comprovada_fonte_pag_contatos"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_rendas_comprovada_fonte_pag_endereco">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="CEP">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:maxInclusive value="99999999"/>
+            <xsd:totalDigits value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="LOGRADOURO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="45"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="NUMERO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="COMPLEMENTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="BAIRRO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MUNICIPIO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:maxInclusive value="99999999"/>
+            <xsd:totalDigits value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="UF">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_rendas_comprovada_fonte_pag_contatos">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TELEFONE" type="avaliacao_risco_credito:servicoentrada_telefone_type"/>
+      <xsd:element minOccurs="0" name="FAX" type="avaliacao_risco_credito:servicoentrada_telefone_type"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_rendas_comprovada_comprovante">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="TP_DOCUMENTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="999999999999"/>
+            <xsd:totalDigits value="12"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DT_REFERENCIA" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_rendas_comprovada_emprego_anterior">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="QT_ANOS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="QT_MESES">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DT_DESLIGAMENTO" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_rendas_nao_comprovada">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="COD_OCUPACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="999999999"/>
+            <xsd:totalDigits value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DT_INICIO" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_LIQUIDA">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="11"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element minOccurs="0" name="FLAG_COMPROVACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9"/>
+            <xsd:totalDigits value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element maxOccurs="4" minOccurs="0" name="COMPROVANTE" type="avaliacao_risco_credito:servicoentrada_dados_cliente_rendas_nao_comprovada_comprovante"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_rendas_nao_comprovada_comprovante">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="TP_DOCUMENTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9"/>
+            <xsd:totalDigits value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DT_REFERENCIA" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_patrimonio">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="IMOVEIS" type="avaliacao_risco_credito:servicoentrada_dados_cliente_patrimonio_imoveis"/>
+      <xsd:element minOccurs="0" name="VEICULOS" type="avaliacao_risco_credito:servicoentrada_dados_cliente_patrimonio_veiculos"/>
+      <xsd:element minOccurs="0" name="CARTOES_CREDITO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_patrimonio_cartoes_credito"/>
+      <xsd:element minOccurs="0" name="CONTAS" type="avaliacao_risco_credito:servicoentrada_dados_cliente_patrimonio_contas_outros_bancos"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_patrimonio_imoveis">
+    <xsd:sequence>
+      <xsd:element maxOccurs="10" minOccurs="0" name="IMOVEL" type="avaliacao_risco_credito:servicoentrada_dados_cliente_patrimonio_imoveis_imovel"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_patrimonio_imoveis_imovel">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="TP_IMOVEL">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_MERCADO">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="11"/>
+            <xsd:maxInclusive value="999999999.99"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_patrimonio_veiculos">
+    <xsd:sequence>
+      <xsd:element maxOccurs="10" minOccurs="0" name="VEICULO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_patrimonio_veiculos_veiculo"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_patrimonio_veiculos_veiculo">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="TP_VEICULO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_MERCADO">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:totalDigits value="11"/>
+            <xsd:fractionDigits value="2"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_patrimonio_cartoes_credito">
+    <xsd:sequence>
+      <xsd:element maxOccurs="10" minOccurs="0" name="CARTAO_CREDITO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_patrimonio_cartoes_credito_cartao_credito"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_patrimonio_cartoes_credito_cartao_credito">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="TP_CARTAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_LIMITE">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:totalDigits value="11"/>
+            <xsd:fractionDigits value="2"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_patrimonio_contas_outros_bancos">
+    <xsd:sequence>
+      <xsd:element maxOccurs="6" minOccurs="0" name="CONTA" type="avaliacao_risco_credito:servicoentrada_dados_cliente_patrimonio_contas_outros_bancos_conta"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_patrimonio_contas_outros_bancos_conta">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="TP_CONTA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="BANCO" type="avaliacao_risco_credito:servicoentrada_banco_type"/>
+      <xsd:element minOccurs="0" name="VR_SALDO">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="11"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_banco_type">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="CODIGO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="999"/>
+            <xsd:totalDigits value="3"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_aplicacoes">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="OUTROS_BANCOS" type="avaliacao_risco_credito:servicoentrada_dados_cliente_aplicacoes_outros_bancos"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_aplicacoes_outros_bancos">
+    <xsd:sequence>
+      <xsd:element maxOccurs="10" minOccurs="0" name="APLICACAO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_aplicacoes_outros_bancos_aplicacao"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_aplicacoes_outros_bancos_aplicacao">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="TP_APLICACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="BANCO" type="avaliacao_risco_credito:servicoentrada_banco_type"/>
+      <xsd:element minOccurs="0" name="VR_SALDO">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="11"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_comp_financeiros">
+    <xsd:sequence>
+      <xsd:element maxOccurs="10" minOccurs="0" name="COMPROMISSO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_comp_financeiros_compromisso"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_comp_financeiros_compromisso">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="TP_COMPROMISSO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_ULTIMA_PRESTACAO">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="11"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element minOccurs="0" name="QT_PRESTACOES_VENCER">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9999"/>
+            <xsd:totalDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DT_ULTIMA_PRESTACAO" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_despesas">
+    <xsd:sequence>
+      <xsd:element maxOccurs="10" minOccurs="0" name="DESPESA" type="avaliacao_risco_credito:servicoentrada_dados_cliente_despesas_despesa"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_despesas_despesa">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="TP_DESPESA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_DESPESA">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="11"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_dependentes">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="QT_COM_RENDA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="999"/>
+            <xsd:totalDigits value="3"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="QT_SEM_RENDA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:totalDigits value="3"/>
+            <xsd:maxInclusive value="999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_LIQUIDO_DEPENDENTE">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:totalDigits value="11"/>
+            <xsd:fractionDigits value="2"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_auto_financiamentos">
+    <xsd:sequence>
+      <xsd:element maxOccurs="10" name="AUTO_FINANCIAMENTO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_auto_financiamentos_auto_financ"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_auto_financiamentos_auto_financ">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="CONSTRUTORA" type="avaliacao_risco_credito:servicoentrada_dados_cliente_auto_financiamentos_auto_financiamento_construtora"/>
+      <xsd:element minOccurs="0" name="PRESTACAO" type="avaliacao_risco_credito:servicoentrada_dados_cliente_auto_financiamentos_auto_financiamento_prestacao"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_auto_financiamentos_auto_financiamento_construtora">
+    <xsd:sequence>
+      <xsd:element name="CNPJ">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="99999999999999"/>
+            <xsd:totalDigits value="14"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_cliente_auto_financiamentos_auto_financiamento_prestacao">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="NUMERO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9999"/>
+            <xsd:totalDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DT_VENCIMENTO" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+      <xsd:element minOccurs="0" name="DT_PAGAMENTO" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_PRESTACAO">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:totalDigits value="11"/>
+            <xsd:fractionDigits value="2"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_operacao">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="PROPOSTA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="AGENCIA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9999"/>
+            <xsd:totalDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ORIGEM_RECURSO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PRODUTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="999999999"/>
+            <xsd:totalDigits value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PERCENTUAL_COMPROMETIMENTO_RENDA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="99"/>
+            <xsd:totalDigits value="2"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_IMOVEL">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:totalDigits value="11"/>
+            <xsd:fractionDigits value="2"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element minOccurs="0" name="VR_FINANCIAMENTO">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="11"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element minOccurs="0" name="TP_GARANTIA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="999999999"/>
+            <xsd:totalDigits value="11"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MODALIDADE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9999"/>
+            <xsd:totalDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PRAZO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9999"/>
+            <xsd:totalDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="VR_PRESTACAO_NECESSARIA">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:totalDigits value="11"/>
+            <xsd:fractionDigits value="2"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element minOccurs="0" name="ALUGUEL" type="avaliacao_risco_credito:servicoentrada_dados_operacao_aluguel"/>
+      <xsd:element minOccurs="0" name="FLAG_CONVENIO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9"/>
+            <xsd:totalDigits value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="CORRESPONDENTE" type="avaliacao_risco_credito:servicoentrada_dados_operacao_correspondente"/>
+      <xsd:element minOccurs="0" name="VR_MARGEM_CONSIGNAVEL">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="11"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element minOccurs="0" name="PC_TAXA_JUROS">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="5"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element minOccurs="0" name="CONVENENTE" type="avaliacao_risco_credito:servicoentrada_dados_operacao_convenente"/>
+            <xsd:element minOccurs="0" name="VEICULO" type="avaliacao_risco_credito:servicoentrada_dados_operacao_veiculo"/>
+            <xsd:element minOccurs="0" name="MODELO_VALIDACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="999999"/>
+            <xsd:totalDigits value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element minOccurs="0" name="MODELO_AVALIACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="999999"/>
+            <xsd:totalDigits value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+        </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_operacao_aluguel">
+    <xsd:sequence>
+      <xsd:element name="FLAG_COMPROVACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9"/>
+            <xsd:totalDigits value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_operacao_correspondente">
+    <xsd:sequence>
+      <xsd:element name="CODIGO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="9999999999"/>
+            <xsd:totalDigits value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_operacao_convenente">
+    <xsd:sequence>
+      <xsd:element name="CNPJ">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="99999999999999"/>
+            <xsd:totalDigits value="14"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_operacao_veiculo">
+    <xsd:sequence>
+      <xsd:element name="ANO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:maxInclusive value="9999"/>
+            <xsd:totalDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+        </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicosaida_dados_erros_validacao">
+    <xsd:sequence>
+      <xsd:element name="TIPO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="30"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="ITEM">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="50"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="ERRO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="60"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicosaida_dados_avaliacao">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="APROVADA" type="avaliacao_risco_credito:servicosaida_dados_avaliacao_aprovada_type"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="CONDICIONADA" type="avaliacao_risco_credito:servicosaida_dados_avaliacao_condicionada_e_reprovada"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="REPROVADA" type="avaliacao_risco_credito:servicosaida_dados_avaliacao_condicionada_e_reprovada"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="MENSAGEM_RETORNO" type="avaliacao_risco_credito:servicosaida_dados_avaliacao_mensagem_retorno"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="0" name="TOMADOR_VALIDA" type="avaliacao_risco_credito:servicosaida_dados_avaliacao_tomador_type"/>
+        </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicosaida_dados_avaliacao_cliente">
+    <xsd:sequence>
+      <xsd:element name="TP_PESSOA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9"/>
+            <xsd:totalDigits value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:choice>
+        <xsd:element name="CPF">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:maxInclusive value="99999999999999"/>
+              <xsd:totalDigits value="14"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="CNPJ">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:maxInclusive value="99999999999999"/>
+              <xsd:totalDigits value="14"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicosaida_dados_avaliacao_aprovada_comum_type">
+    <xsd:sequence>
+      <xsd:element name="PROPOSTA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="CODIGO_AVALIACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="999999999"/>
+            <xsd:totalDigits value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="CLIENTE" type="avaliacao_risco_credito:servicosaida_dados_avaliacao_cliente"/>
+      <xsd:element name="PRODUTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="999999999"/>
+            <xsd:totalDigits value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="MODALIDADE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9999"/>
+            <xsd:totalDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="DT_INICIO_VIGENCIA" type="avaliacao_risco_credito:data_type">
+            </xsd:element>
+      <xsd:element name="DT_FIM_VIGENCIA" type="avaliacao_risco_credito:data_type">
+      </xsd:element>
+      <xsd:element name="PRAZO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9999"/>
+            <xsd:totalDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicosaida_dados_avaliacao_condicionada_e_reprovada">
+    <xsd:sequence>
+      <xsd:element name="PROPOSTA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="CODIGO_AVALIACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="999999999"/>
+            <xsd:totalDigits value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="CLIENTE" type="avaliacao_risco_credito:servicosaida_dados_avaliacao_cliente"/>
+      <xsd:element name="PRODUTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="999999999"/>
+            <xsd:totalDigits value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="MOTIVO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="500"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="VR_FINANCIAMENTO_POSSIVEL">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="14"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+      <xsd:element name="PRAZO_POSSIVEL">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:maxInclusive value="9999"/>
+            <xsd:totalDigits value="4"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="VR_PRESTACAO_POSSIVEL">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:decimal">
+            <xsd:maxInclusive value="999999999999.99"/>
+            <xsd:fractionDigits value="2"/>
+            <xsd:totalDigits value="14"/>
+                        <xsd:minInclusive value="0"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+            </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicosaida_dados_avaliacao_mensagem_retorno">
+    <xsd:sequence>
+      <xsd:element name="PROPOSTA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string"/>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="CLIENTE" type="avaliacao_risco_credito:servicosaida_dados_avaliacao_cliente"/>
+      <xsd:element name="PRODUTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long"/>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="IDENTIFICADOR_MENSAGEM">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short"/>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_dados_type">
+    <xsd:sequence>
+      <xsd:element maxOccurs="1" minOccurs="0" name="TOMADOR" type="avaliacao_risco_credito:servicoentrada_dados_cliente"/>
+      <xsd:element maxOccurs="9" minOccurs="0" name="COOBRIGADO" type="avaliacao_risco_credito:servicoentrada_dados_cliente"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="DADOS_OPERACAO" type="avaliacao_risco_credito:servicoentrada_dados_operacao"/>
+            <xsd:element maxOccurs="10" minOccurs="0" name="QUADRO_VALORES" type="avaliacao_risco_credito:servicoentrada_dados_quadro_valoes"/>
+            <xsd:element maxOccurs="1" minOccurs="0" name="RELACIONAMENTOS" type="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_type"/>
+            <xsd:element minOccurs="0" name="AVALIACAO_COM_ATUALIZACAO_VIA_SICLI" type="avaliacao_risco_credito:servicoentrada_dados_avaliacao_com_atualizacao_via_sicli_type"/>
+            <xsd:element minOccurs="0" name="CONTROLE_CCA" type="avaliacao_risco_credito:dados_controle_cca_Type"/>
+        </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicoentrada_type">
+    <xsd:complexContent>
+      <xsd:extension base="sibar_base:SERVICO_ENTRADA_TYPE">
+        <xsd:sequence>
+          <xsd:element name="DADOS" type="avaliacao_risco_credito:servicoentrada_dados_type"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:complexType name="servicosaida_dados_type">
+    <xsd:sequence>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="ERROS_VALIDACAO" type="avaliacao_risco_credito:servicosaida_dados_erros_validacao"/>
+      <xsd:element minOccurs="0" name="AVALIACAO" type="avaliacao_risco_credito:servicosaida_dados_avaliacao"/>
+      <xsd:element minOccurs="0" name="EXCECAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="5000"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element maxOccurs="1" minOccurs="0" name="PROTOCOLO" type="avaliacao_risco_credito:servicosaida_dados_protocolo_type"/>
+            <xsd:element minOccurs="0" name="CONTROLE_CCA" type="avaliacao_risco_credito:dados_controle_cca_Type"/>
+        </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="servicosaida_type">
+    <xsd:complexContent>
+      <xsd:extension base="sibar_base:SERVICO_SAIDA_TYPE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="DADOS" type="avaliacao_risco_credito:servicosaida_dados_type"/>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="SERVICO_ENTRADA" type="avaliacao_risco_credito:servicoentrada_type">
+  </xsd:element>
+    <xsd:element name="SERVICO_SAIDA" type="avaliacao_risco_credito:servicosaida_type">
+  </xsd:element>
+    <xsd:complexType name="servicosaida_dados_protocolo_type">
+    <xsd:sequence>
+      <xsd:element default="0" name="TP_PESSOA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element default="0" name="CPF">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="99999999999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element maxOccurs="10" name="AVALIACAO" type="avaliacao_risco_credito:servicosaida_dados_protocolo_avaliacao_type"/>
+        </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="servicosaida_dados_protocolo_avaliacao_type">
+    <xsd:sequence>
+      <xsd:element default=" " minOccurs="0" name="PROPOSTA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element default="0" name="AGENCIA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element default="0" minOccurs="0" name="ORIGEM_RECURSO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="99"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element default="0" name="PRODUTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="999999999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="servicosaida_dados_avaliacao_aprovada_type">
+    <xsd:complexContent>
+      <xsd:extension base="avaliacao_risco_credito:servicosaida_dados_avaliacao_aprovada_comum_type">
+        <xsd:sequence>
+          <xsd:element default="0" name="VR_LIMITE_GLOBAL">
+                        <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:maxInclusive value="999999999999.99"/>
+                <xsd:fractionDigits value="2"/>
+                <xsd:totalDigits value="14"/>
+                                <xsd:minInclusive value="0"/>
+                            </xsd:restriction>
+            </xsd:simpleType>
+                    </xsd:element>
+          <xsd:element default="0" name="VR_CPM">
+                        <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:maxInclusive value="999999999999.99"/>
+                <xsd:fractionDigits value="2"/>
+                <xsd:totalDigits value="14"/>
+                                <xsd:minInclusive value="0"/>
+                            </xsd:restriction>
+            </xsd:simpleType>
+                    </xsd:element>
+          <xsd:element default="0" name="VR_FINANCIAMENTO">
+                        <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:maxInclusive value="999999999999.99"/>
+                <xsd:fractionDigits value="2"/>
+                <xsd:totalDigits value="14"/>
+                                <xsd:minInclusive value="0"/>
+                            </xsd:restriction>
+            </xsd:simpleType>
+                    </xsd:element>
+          <xsd:element default=" " name="RATING">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="3"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element default=" " name="FLAG_BLOQ_ALCADA">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="1"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element default="0" name="ACAO_VENDA">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:short">
+                <xsd:maxInclusive value="999"/>
+                <xsd:minInclusive value="0"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+    <xsd:complexType name="servicosaida_dados_avaliacao_tomador_type">
+    <xsd:complexContent>
+      <xsd:extension base="avaliacao_risco_credito:servicosaida_dados_avaliacao_aprovada_comum_type">
+        <xsd:sequence>
+          <xsd:element default="0" name="RESULTADO">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:short">
+                <xsd:minInclusive value="0"/>
+                <xsd:maxInclusive value="99"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element default="0" name="VALOR_CALCULADO_TOTAL">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:minInclusive value="0"/>
+                <xsd:maxInclusive value="999999999999.99"/>
+                <xsd:fractionDigits value="2"/>
+                <xsd:totalDigits value="14"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element default="0" name="VALOR_DISPONIVEL">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:decimal">
+                <xsd:minInclusive value="0"/>
+                <xsd:maxInclusive value="999999999999.99"/>
+                <xsd:fractionDigits value="2"/>
+                <xsd:totalDigits value="14"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+          <xsd:element default=" " name="RATING">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="3"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+                    <xsd:element default=" " name="MOTIVO_REPROVACAO">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:string">
+                <xsd:maxLength value="500"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+                    <xsd:element minOccurs="0" name="AVALIACAO_BLOQUEADA_TOMADOR">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:short">
+                <xsd:minInclusive value="0"/>
+                <xsd:maxInclusive value="9"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+                </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_quadro_valoes">
+    <xsd:sequence>
+            <xsd:choice>
+        <xsd:sequence minOccurs="1">
+          <xsd:element minOccurs="0" name="COD_QUADRO_VALOR">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:maxInclusive value="9999999999"/>
+            <xsd:totalDigits value="10"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+          <xsd:element minOccurs="0" name="LINHA_1" type="avaliacao_risco_credito:linha_quadro_valor_type">
+      </xsd:element>
+          <xsd:element minOccurs="0" name="LINHA_2" type="avaliacao_risco_credito:linha_quadro_valor_type">
+      </xsd:element>
+          <xsd:element minOccurs="0" name="LINHA_3" type="avaliacao_risco_credito:linha_quadro_valor_type">
+      </xsd:element>
+          <xsd:element minOccurs="0" name="LINHA_4" type="avaliacao_risco_credito:linha_quadro_valor_type">
+      </xsd:element>
+          <xsd:element minOccurs="0" name="LINHA_5" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_6" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_7" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_8" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_9" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_10" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_11" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_12" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_13" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_14" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_15" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_16" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_17" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_18" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_19" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_20" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_21" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_22" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_23" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_24" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_25" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_26" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_27" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_28" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_29" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_30" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_31" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_32" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_33" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_34" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_35" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_36" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_37" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_38" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_39" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+          <xsd:element minOccurs="0" name="LINHA_40" type="avaliacao_risco_credito:linha_quadro_valor_type"/>
+        </xsd:sequence>
+        <xsd:element name="ENDIVIDAMENTO" type="avaliacao_risco_credito:quadro_valores_837_endividamento_Type"/>
+        <xsd:element name="FATURAMENTO_E_ADMINISTRATIVO" type="avaliacao_risco_credito:quadro_valores_934_faturamento_e_admnistrativo_Type"/>
+        <xsd:element name="GIROCAIXA_FACIL_734" type="avaliacao_risco_credito:quadro_valores_931_girocaixa_facil_734_Type"/>
+        <xsd:element name="QUALIFICACAO_RESTRICOES_RELATIVAS" type="xsd:string"/>
+        <xsd:element name="CARTOES_PJ" type="avaliacao_risco_credito:quadro_valores_920_cartoes_pj_type"/>
+                <xsd:element name="MICRO_CREDITO" type="avaliacao_risco_credito:quadro_valores_925_micro_credito"/>
+                <xsd:element name="BACEN" type="avaliacao_risco_credito:quadro_valores_836_bacen_Type"/>
+                <xsd:element name="INGRESSO_SOCIOS" type="avaliacao_risco_credito:quadro_valores_1224_data_ingresso_socios_Type"/>
+                <xsd:element name="DIVIDAS_SCR_BACEN_LIQUIDADAS" type="avaliacao_risco_credito:quadro_valores_1204_dividas_scr_bacen_liquidadas"/>
+                <xsd:element name="ANTECIPACAO_IRPF" type="avaliacao_risco_credito:quadro_valores_574_antecipacao_irpf"/>
+            </xsd:choice>
+        </xsd:sequence>
+  </xsd:complexType>
+    <xsd:simpleType name="data_type">
+    <xsd:restriction base="xsd:string">
+      <xsd:maxLength value="8"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+    <xsd:simpleType name="valor_Type">
+    <xsd:restriction base="xsd:decimal">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="999999999.99"/>
+      <xsd:fractionDigits value="2"/>
+      <xsd:totalDigits value="11"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+    <xsd:simpleType name="linha_quadro_valor_type">
+    <xsd:restriction base="xsd:long">
+      <xsd:minInclusive value="0"/>
+      <xsd:maxInclusive value="99999999999"/>
+      <xsd:totalDigits value="11"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+    <xsd:complexType name="conta_Type">
+    <xsd:sequence>
+      <xsd:element name="UNIDADE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="PRODUTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="NUMERO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:long">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9999999999999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_relacionamentos_padrao_type">
+    <xsd:sequence>
+      <xsd:element name="PESSOA_RECIPROCA" type="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_pessoa_reciproca_type"/>
+      <xsd:element name="DATA_INICIO" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="DATA_FIM" type="xsd:date"/>
+      <xsd:element minOccurs="0" name="VALOR_RELACIONAMENTO" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+            <xsd:element minOccurs="0" name="CODIGO_PRODUTO">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:int">
+                <xsd:minInclusive value="0"/>
+                <xsd:maxInclusive value="999999999"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_relacionamentos_pessoa_reciproca_type">
+    <xsd:sequence>
+      <xsd:choice>
+        <xsd:element name="CPF" type="xsd:string"/>
+        <xsd:element name="CNPJ" type="xsd:string"/>
+                <xsd:element name="CODIGO_GARANTIA">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:string">
+              <xsd:maxLength value="15"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+                <xsd:element name="CONTA" type="avaliacao_risco_credito:conta_Type"/>
+            </xsd:choice>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_relacionamentos_pergunta_121_Type">
+    <xsd:complexContent>
+      <xsd:extension base="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_padrao_type">
+        <xsd:sequence>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_relacionamentos_pergunta_123_Type">
+    <xsd:complexContent>
+      <xsd:extension base="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_padrao_type">
+        <xsd:sequence>
+                    <xsd:element minOccurs="0" name="TIPO_GARANTIA">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:short">
+                <xsd:minInclusive value="0"/>
+                <xsd:maxInclusive value="9"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+                </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_relacionamentos_pergunta_220_Type">
+    <xsd:complexContent>
+      <xsd:extension base="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_padrao_type">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_relacionamentos_pergunta_259_Type">
+    <xsd:complexContent>
+      <xsd:extension base="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_padrao_type">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_relacionamentos_pergunta_267_Type">
+    <xsd:complexContent>
+      <xsd:extension base="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_padrao_type">
+        <xsd:sequence>
+          <xsd:element name="VALOR_FATURAMENTO_FISCAL" type="avaliacao_risco_credito:valor_Type"/>
+          <xsd:element name="ANO_FATURAMENTO">
+            <xsd:simpleType>
+              <xsd:restriction base="xsd:short">
+                <xsd:minInclusive value="0"/>
+                <xsd:maxInclusive value="9999"/>
+              </xsd:restriction>
+            </xsd:simpleType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_relacionamentos_pergunta_301_Type">
+    <xsd:complexContent>
+      <xsd:extension base="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_padrao_type">
+        <xsd:sequence/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_relacionamentos_type">
+    <xsd:sequence>
+            <xsd:choice maxOccurs="unbounded">
+                <xsd:element name="PERGUNTA_121" type="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_pergunta_121_Type"/>
+                <xsd:element name="PERGUNTA_123" type="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_pergunta_123_Type"/>
+        <xsd:element name="PERGUNTA_220" type="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_pergunta_220_Type"/>
+        <xsd:element name="PERGUNTA_267" type="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_pergunta_267_Type"/>
+        <xsd:element name="PERGUNTA_301" type="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_pergunta_301_Type"/>
+                <xsd:element name="PERGUNTA_259" type="avaliacao_risco_credito:servicoentrada_dados_relacionamentos_pergunta_259_Type"/>
+            </xsd:choice>
+        </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="servicoentrada_dados_avaliacao_com_atualizacao_via_sicli_type">
+    <xsd:sequence>
+      <xsd:element name="TP_PESSOA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9"/>
+            <xsd:totalDigits value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:choice>
+        <xsd:element name="CPF">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:minInclusive value="0"/>
+              <xsd:maxInclusive value="99999999999999"/>
+              <xsd:totalDigits value="14"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="CNPJ">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:minInclusive value="0"/>
+              <xsd:maxInclusive value="99999999999999"/>
+              <xsd:totalDigits value="14"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:choice>
+      <xsd:element minOccurs="0" name="MODELO_VALIDACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="999999"/>
+            <xsd:totalDigits value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="MODELO_AVALIACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="999999"/>
+            <xsd:totalDigits value="6"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_931_girocaixa_facil_734_Type">
+    <xsd:sequence>
+      <xsd:element name="VALOR_SOLICITADO" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+      <xsd:element name="RENOVACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SIM"/>
+            <xsd:enumeration value="NAO"/>
+                        <xsd:maxLength value="3"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_920_cartoes_pj_type">
+    <xsd:sequence>
+      <xsd:element name="VALOR_SOLICITADO" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_837_endividamento_dividas_divida_Type">
+    <xsd:sequence>
+      <xsd:element name="VALOR" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+      <xsd:element name="TAXA_JUROS" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+      <xsd:element name="TAXA_INDEXADOR" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+      <xsd:element name="PRAZO_AMORTIZACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="SALDO_DEVEDOR_ATUAL" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+            <xsd:element name="VALOR_PRESTACAO" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+        </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_837_endividamento_dividas_Type">
+    <xsd:sequence>
+      <xsd:element maxOccurs="3" name="DIVIDA" type="avaliacao_risco_credito:quadro_valores_837_endividamento_dividas_divida_Type"/>
+      <xsd:element name="MONTANTE" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+      <xsd:element name="SOMA_SD_ATE_36_MESES" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+      <xsd:element name="SOMA_PMT_MAIOR_36_MESES" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_837_endividamento_Type">
+    <xsd:sequence>
+      <xsd:element name="SITUACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element name="QUANTIDADE_DIVIDAS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element name="DIVIDAS" type="avaliacao_risco_credito:quadro_valores_837_endividamento_dividas_Type"/>
+        </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_836_bacen_divida_Type">
+    <xsd:sequence>
+      <xsd:element name="DATA_LIQUIDACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:date"/>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="VALOR_PRESTACAO" type="avaliacao_risco_credito:valor_Type"/>
+      <xsd:element name="PRAZO_REMANESCENTE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_836_bacen_dividas_divida_Type">
+    <xsd:sequence>
+      <xsd:element maxOccurs="3" name="DIVIDA" type="avaliacao_risco_credito:quadro_valores_836_bacen_divida_Type"/>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_836_bacen_Type">
+    <xsd:sequence>
+            <xsd:element name="DIVIDAS" type="avaliacao_risco_credito:quadro_valores_836_bacen_dividas_divida_Type"/>
+        </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_925_micro_credito">
+    <xsd:sequence maxOccurs="1" minOccurs="1">
+      <xsd:element name="DATA_VISITA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:date"/>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="FINALIDADE_CREDITO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="CAPITAL DE GIRO"/>
+                        <xsd:enumeration value="INVESTIMENTO"/>
+                        <xsd:maxLength value="20"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="CNPJ_RAIZ">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="99999999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_934_faturamento_e_admnistrativo_Type">
+    <xsd:sequence>
+            <xsd:element minOccurs="0" name="DATA_INICIO_ATIVIDADE">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:date"/>
+        </xsd:simpleType>
+            </xsd:element>
+            <xsd:element minOccurs="0" name="DATA_ULTIMA_ALTERACAO_CONTRATUAL">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:date"/>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element minOccurs="0" name="SITUACAO_SEDE">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="20"/>
+            <xsd:enumeration value="ALUGADA"/>
+            <xsd:enumeration value="CEDIDA"/>
+            <xsd:enumeration value="PROPRIA QUITADA"/>
+            <xsd:enumeration value="PROPRIA FINANCIADA"/>
+            <xsd:enumeration value="OUTRAS"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element minOccurs="0" name="REGIME_TRIBUTARIO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="SIMPLES"/>
+            <xsd:enumeration value="LUCRO PRESUMIDO"/>
+            <xsd:enumeration value="LUCRO REAL"/>
+            <xsd:enumeration value="ISENTO/IMUNE"/>
+            <xsd:maxLength value="20"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element minOccurs="0" name="RECEITA_FISCAL" type="avaliacao_risco_credito:quadro_valores_934_faturamento_e_administrativo_receita_fiscal_Type"/>
+            <xsd:element minOccurs="0" name="FATURAMENTO_DECLARADO" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+      <xsd:element minOccurs="0" name="PERCENTUAL_VENDAS_A_PRAZO" type="avaliacao_risco_credito:valor_Type"/>
+      <xsd:element minOccurs="0" name="REGULARIDADE_ASPECTOS_LEGAIS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="10"/>
+            <xsd:enumeration value="REGULAR"/>
+            <xsd:enumeration value="IRREGULAR"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="SITUACAO_ENDIVIDAMENTO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+                        <xsd:enumeration value="NAO EXISTE DIVIDA"/>
+                        <xsd:enumeration value="EXISTE DIVIDA"/>
+                        <xsd:maxLength value="20"/>
+                    </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element minOccurs="0" name="FLAG_FRANQUIA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="S"/>
+            <xsd:enumeration value="N"/>
+            <xsd:maxLength value="1"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+            <xsd:element minOccurs="0" name="ATUALIZACAO_AVALIACAO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+        </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_1224_data_ingresso_socios_Type">
+    <xsd:sequence>
+      <xsd:element maxOccurs="10" name="SOCIO" type="avaliacao_risco_credito:quadro_valores_1224_socio_Type"/>
+        </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="dados_controle_cca_Type">
+    <xsd:sequence>
+      <xsd:element name="CONVENIO" type="avaliacao_risco_credito:convenio_cca_Type"/>
+      <xsd:element default=" " minOccurs="0" name="MATRICULA_USUARIO">
+                <xsd:simpleType>
+          <xsd:restriction base="xsd:string">
+            <xsd:maxLength value="8"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="convenio_cca_Type">
+    <xsd:sequence>
+      <xsd:element name="CODIGO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="99999999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="DV">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_934_faturamento_e_administrativo_receita_fiscal_Type">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="MEDIA_MENSAL_ULTIMOS_12_MESES" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+      <xsd:element minOccurs="0" name="QUANTIDADE_MESES">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element minOccurs="0" name="EXERCICIO_ENCERRADO" type="avaliacao_risco_credito:quadro_valores_934_faturamento_e_administrativo_receita_fiscal_exercicio_encerrado_Type"/>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_934_faturamento_e_administrativo_receita_fiscal_exercicio_encerrado_Type">
+    <xsd:sequence>
+      <xsd:element minOccurs="0" name="VALOR_BRUTO" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+      <xsd:element minOccurs="0" name="ANO_REFERENCIA">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_1224_socio_Type">
+    <xsd:sequence>
+            <xsd:element name="CPF">
+          <xsd:simpleType>
+            <xsd:restriction base="xsd:long">
+              <xsd:minInclusive value="0"/>
+              <xsd:maxInclusive value="99999999999"/>
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+            <xsd:element name="DATA_INGRESSO">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:date"/>
+        </xsd:simpleType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_1204_dividas_scr_bacen_liquidadas">
+    <xsd:sequence>
+      <xsd:element name="DATA_LIQUIDACAO" type="xsd:date"/>
+      <xsd:element name="QUANTIDADE_DIVIDAS">
+        <xsd:simpleType>
+          <xsd:restriction base="xsd:short">
+            <xsd:minInclusive value="0"/>
+            <xsd:maxInclusive value="9999"/>
+          </xsd:restriction>
+        </xsd:simpleType>
+      </xsd:element>
+      <xsd:element name="VALOR_TOTAL_LIQUIDADO" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+    <xsd:complexType name="quadro_valores_574_antecipacao_irpf">
+    <xsd:sequence>
+      <xsd:element name="VALOR_RESTITUICAO" type="avaliacao_risco_credito:valor_Type">
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

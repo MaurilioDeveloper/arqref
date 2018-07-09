@@ -1,0 +1,79 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <consultacobrancabancaria:SERVICO_SAIDA xmlns:consultacobrancabancaria="http://caixa.gov.br/sibar/consulta_cobranca_bancaria/boleto" xmlns:sibar_base="http://caixa.gov.br/sibar">
+         <sibar_base:HEADER>
+            <VERSAO>2.4.2</VERSAO>
+            <AUTENTICACAO>JQPKc9xH34pm/dyhrjy6m/Pobu07/MqSNJs7GYJVO04=</AUTENTICACAO>
+            <USUARIO_SERVICO>SCNLFECD</USUARIO_SERVICO>
+            <OPERACAO>CONSULTA_BOLETO</OPERACAO>
+            <SISTEMA_ORIGEM>SIGCB</SISTEMA_ORIGEM>
+            <UNIDADE>0002</UNIDADE>
+            <IDENTIFICADOR_ORIGEM>127.0.0.1</IDENTIFICADOR_ORIGEM>
+            <DATA_HORA>20160109152436</DATA_HORA>
+         </sibar_base:HEADER>
+         <COD_RETORNO>00</COD_RETORNO>
+         <ORIGEM_RETORNO>CONSULTA_COBRANCA_BANCARIA</ORIGEM_RETORNO>
+         <MSG_RETORNO/>
+         <DADOS>
+            <CONTROLE_NEGOCIAL>
+               <ORIGEM_RETORNO>SIGCB</ORIGEM_RETORNO>
+               <COD_RETORNO>0</COD_RETORNO>
+               <MENSAGENS>
+                  <RETORNO>(0) OPERACAO EFETUADA</RETORNO>
+               </MENSAGENS>
+            </CONTROLE_NEGOCIAL>
+            <CONSULTA_BOLETO>
+               <TITULO>
+                  <NUMERO_DOCUMENTO>1100000619</NUMERO_DOCUMENTO>
+                  <DATA_VENCIMENTO>2017-01-21</DATA_VENCIMENTO>
+                  <VALOR>234.56</VALOR>
+                  <TIPO_ESPECIE>99</TIPO_ESPECIE>
+                  <DATA_EMISSAO>2016-01-04</DATA_EMISSAO>
+                  <JUROS_MORA>
+                     <DATA>2017-01-23</DATA>
+                  </JUROS_MORA>
+                  <VALOR_ABATIMENTO>0.00</VALOR_ABATIMENTO>
+                  <POS_VENCIMENTO>
+                     <NUMERO_DIAS>0</NUMERO_DIAS>
+                  </POS_VENCIMENTO>
+                  <CODIGO_MOEDA>9</CODIGO_MOEDA>
+                  <PAGADOR>
+                     <CPF>1702374947</CPF>
+                     <NOME>teste</NOME>
+                     <ENDERECO>
+                        <LOGRADOURO>SEPN Quadra 512 Conjunto C Lote 9</LOGRADOURO>
+                        <BAIRRO>Asa Sul</BAIRRO>
+                        <CIDADE>Brasília</CIDADE>
+                        <UF>DF</UF>
+                        <CEP>70760500</CEP>
+                     </ENDERECO>
+                  </PAGADOR>
+                  <SACADOR_AVALISTA>
+                     <CNPJ>0</CNPJ>
+                     <RAZAO_SOCIAL/>
+                  </SACADOR_AVALISTA>
+                  <VALOR_IOF>0.00</VALOR_IOF>
+                  <IDENTIFICACAO_EMPRESA>040005110000061989001</IDENTIFICACAO_EMPRESA>
+                  <FICHA_COMPENSACAO>
+                     <MENSAGENS>
+                        <MENSAGEM>Pagamento até o vencimento</MENSAGEM>
+                     </MENSAGENS>
+                  </FICHA_COMPENSACAO>
+                  <RECIBO_PAGADOR>
+                     <MENSAGENS>
+                        <MENSAGEM>Pagável sommente na CAIXA</MENSAGEM>
+                     </MENSAGENS>
+                  </RECIBO_PAGADOR>
+                  <PAGAMENTO>
+                     <QUANTIDADE_PERMITIDA>1</QUANTIDADE_PERMITIDA>
+                  </PAGAMENTO>
+                  <CODIGO_BARRAS>10492704600000234568200017800150040001137016</CODIGO_BARRAS>
+                  <LINHA_DIGITAVEL>10498200021780015004100011370160270460000023456</LINHA_DIGITAVEL>
+                  <URL/>
+                  <FLAG_REGISTRO>1</FLAG_REGISTRO>
+               </TITULO>
+            </CONSULTA_BOLETO>
+         </DADOS>
+      </consultacobrancabancaria:SERVICO_SAIDA>
+   </soapenv:Body>
+</soapenv:Envelope>

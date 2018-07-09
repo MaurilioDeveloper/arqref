@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<soapenv:Body>
+		<executarOperacaoResponse xmlns="http://services.consignet.db1.com.br">
+			<executarOperacaoReturn>&lt;webservice&gt;
+				&lt;acao&gt;RETORNO&lt;/acao&gt;
+				&lt;operacao&gt;CONSULTAR_MARGEM_CPF&lt;/operacao&gt;
+				&lt;versao&gt;1.0&lt;/versao&gt; &lt;atributos&gt; &lt;atributo&gt;
+				&lt;nome&gt;COD_RETORNO&lt;/nome&gt; &lt;valor&gt;-20&lt;/valor&gt;
+				&lt;/atributo&gt; &lt;atributo&gt;
+				&lt;nome&gt;DESC_RETORNO&lt;/nome&gt; &lt;valor&gt;Usu&#xE1;rio ou
+				senha do conv&#xEA;nio incorretos.&lt;/valor&gt; &lt;/atributo&gt;
+				&lt;/atributos&gt;&lt;/webservice&gt;</executarOperacaoReturn>
+		</executarOperacaoResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

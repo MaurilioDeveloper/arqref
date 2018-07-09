@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<soapenv:Envelope 
+	xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+	xmlns:bol="http://caixa.gov.br/sibar/consulta_cobranca_bancaria/boleto" 
+	xmlns:sib="http://caixa.gov.br/sibar">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <bol:SERVICO_ENTRADA>
+         <sib:HEADER>
+            <VERSAO>2.4.2</VERSAO>
+            <AUTENTICACAO>JQPKc9xH34pm/dyhrjy6m/Pobu07/MqSNJs7GYJVO04=</AUTENTICACAO>
+            <USUARIO_SERVICO>SCNLFECD</USUARIO_SERVICO>
+            <OPERACAO>CONSULTA_BOLETO</OPERACAO>
+            <SISTEMA_ORIGEM>SIGCB</SISTEMA_ORIGEM>
+            <UNIDADE>0002</UNIDADE>
+            <IDENTIFICADOR_ORIGEM>127.0.0.1</IDENTIFICADOR_ORIGEM>
+            <DATA_HORA>20160109152436</DATA_HORA>
+         </sib:HEADER>
+         <DADOS>
+            <CONSULTA_BOLETO>
+               <CODIGO_BENEFICIARIO>0820001</CODIGO_BENEFICIARIO>
+               <NOSSO_NUMERO>14800500000113701</NOSSO_NUMERO>
+            </CONSULTA_BOLETO>
+         </DADOS>
+      </bol:SERVICO_ENTRADA>
+   </soapenv:Body>
+</soapenv:Envelope>

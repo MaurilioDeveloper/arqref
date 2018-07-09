@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Body>
+		<ns13:consultarMargemResponse xmlns:ns13="HostaHostService">
+			<ns13:sucesso>true</ns13:sucesso>
+			<ns13:codRetorno>359</ns13:codRetorno>
+			<ns13:mensagem>Valor da parcela informado Ã© maior do que margem disponÃ­vel.: R$9350,15</ns13:mensagem>
+			<ns13:infoMargem>
+				<ns6:estabelecimentoCodigo xmlns:ns6="InfoMargem">001</ns6:estabelecimentoCodigo>
+				<ns6:estabelecimento xmlns:ns6="InfoMargem">PREFEITURA MUNICIPAL DE BAURU</ns6:estabelecimento>
+				<ns6:orgaoCodigo xmlns:ns6="InfoMargem">001000</ns6:orgaoCodigo>
+				<ns6:orgao xmlns:ns6="InfoMargem">GABINETE DO PREFEITO</ns6:orgao>
+				<ns6:categoria xmlns:ns6="InfoMargem">ESTATUTARIO - AGENTE SOCIAL</ns6:categoria>
+				<ns6:servidor xmlns:ns6="InfoMargem">JOSE SILVA 01</ns6:servidor>
+				<ns6:cpf xmlns:ns6="InfoMargem">541.878.673-33</ns6:cpf>
+				<ns6:matricula xmlns:ns6="InfoMargem">27594</ns6:matricula>
+				<ns6:dataNascimento xmlns:ns6="InfoMargem">1983-08-11-03:00</ns6:dataNascimento>
+				<ns6:prazoServidor xmlns:ns6="InfoMargem">0</ns6:prazoServidor>
+				<ns6:valorMargem xmlns:ns6="InfoMargem">9350.15</ns6:valorMargem>
+				<ns6:textoMargem xmlns:ns6="InfoMargem"></ns6:textoMargem>
+				<ns6:valorMargem2 xmlns:ns6="InfoMargem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1" />
+				<ns6:textoMargem2 xmlns:ns6="InfoMargem"></ns6:textoMargem2>
+				<ns6:valorMargem3 xmlns:ns6="InfoMargem" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="1" />
+				<ns6:textoMargem3 xmlns:ns6="InfoMargem"></ns6:textoMargem3>
+			</ns13:infoMargem>
+		</ns13:consultarMargemResponse>
+	</soapenv:Body>
+</soapenv:Envelope>

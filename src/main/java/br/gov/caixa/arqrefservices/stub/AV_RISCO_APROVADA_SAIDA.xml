@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<soapenv:Envelope
+	xmlns:bol="http://caixa.gov.br/sibar/consulta_cobranca_bancaria/boleto"
+	xmlns:sib="http://caixa.gov.br/sibar" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header />
+	<soapenv:Body>
+		<consultacobrancabancaria:SERVICO_SAIDA
+			xmlns:sibar_base="http://caixa.gov.br/sibar"
+			xmlns:consultacobrancabancaria="http://caixa.gov.br/sibar/consulta_cobranca_bancaria/boleto">
+	<sibar_base:HEADER>
+				<VERSAO>2.4.2</VERSAO>
+				<AUTENTICACAO>JQPKc9xH34pm/dyhrjy6m/Pobu07/MqSNJs7GYJVO04=
+				</AUTENTICACAO>
+				<USUARIO_SERVICO>SCNLFECD</USUARIO_SERVICO>
+				<OPERACAO>CONSULTA_BOLETO</OPERACAO>
+				<INDICE>0</INDICE>
+				<SISTEMA_ORIGEM>SIGBD</SISTEMA_ORIGEM>
+				<UNIDADE>0002</UNIDADE>
+				<IDENTIFICADOR_ORIGEM>127.0.0.1</IDENTIFICADOR_ORIGEM>
+				<DATA_HORA>20160109152436</DATA_HORA>
+	</sibar_base:HEADER>
+			<COD_RETORNO>12</COD_RETORNO>
+			<ORIGEM_RETORNO>CONSULTA_COBRANCA_BANCARIA</ORIGEM_RETORNO>
+			<MSG_RETORNO>MENSAGEM RETONOOOO</MSG_RETORNO>
+	<DADOS>
+				<CONSULTA_BOLETO>
+					<TITULO>
+						<NUMERO_DOCUMENTO>12315645</NUMERO_DOCUMENTO>
+						<DATA_VENCIMENTO>2017-02-01T11:44:42.946-02:00</DATA_VENCIMENTO>
+						<VALOR>25698.69</VALOR>
+						<TIPO_ESPECIE>2</TIPO_ESPECIE>
+						<FLAG_ACEITE>S</FLAG_ACEITE>
+						<DATA_EMISSAO>2017-02-01T11:44:42.947-02:00</DATA_EMISSAO>
+						<VALOR_ABATIMENTO>741474.55</VALOR_ABATIMENTO>
+						<CODIGO_MOEDA>2</CODIGO_MOEDA>
+						<VALOR_IOF>4.55</VALOR_IOF>
+						<IDENTIFICACAO_EMPRESA>ICBD</IDENTIFICACAO_EMPRESA>
+						<CODIGO_BARRAS>6465465564540500005450450</CODIGO_BARRAS>
+						<LINHA_DIGITAVEL>6465465564540500005450450</LINHA_DIGITAVEL>
+						<URL>www.google.com</URL>
+					</TITULO>
+					<FLAG_REGISTRO>S</FLAG_REGISTRO>
+				</CONSULTA_BOLETO>
+	</DADOS>
+		</consultacobrancabancaria:SERVICO_SAIDA>
+	</soapenv:Body>
+</soapenv:Envelope>

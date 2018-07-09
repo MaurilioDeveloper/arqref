@@ -1,0 +1,34 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   <soapenv:Body>
+      <manutencaocobrancabancaria:SERVICO_SAIDA xmlns:manutencaocobrancabancaria="http://caixa.gov.br/sibar/manutencao_cobranca_bancaria/boleto" xmlns:sibar_base="http://caixa.gov.br/sibar">
+         <sibar_base:HEADER>
+            <VERSAO>1.0</VERSAO>
+            <AUTENTICACAO>t5c99F20HE+vMlqGVgN601P6TrH8cBteaeTDUKWTnm4=</AUTENTICACAO>
+            <USUARIO_SERVICO>SCNLFECD</USUARIO_SERVICO>
+            <OPERACAO>INCLUI_BOLETO</OPERACAO>
+            <INDICE>0</INDICE>
+            <SISTEMA_ORIGEM>SIEMP</SISTEMA_ORIGEM>
+            <DATA_HORA>20170214172425</DATA_HORA>
+         </sibar_base:HEADER>
+         <COD_RETORNO>00</COD_RETORNO>
+         <ORIGEM_RETORNO>MANUTENCAO_COBRANCA_BANCARIA</ORIGEM_RETORNO>
+         <MSG_RETORNO/>
+         <DADOS>
+            <CONTROLE_NEGOCIAL>
+               <ORIGEM_RETORNO>SIGCB</ORIGEM_RETORNO>
+               <COD_RETORNO>0</COD_RETORNO>
+               <MENSAGENS>
+                  <RETORNO>(0) OPERACAO EFETUADA</RETORNO>
+               </MENSAGENS>
+            </CONTROLE_NEGOCIAL>
+            <INCLUI_BOLETO>
+               <CODIGO_BARRAS>10499707000002304146279651000100040837555792</CODIGO_BARRAS>
+               <LINHA_DIGITAVEL>10496279695100010004308375557926970700000230414</LINHA_DIGITAVEL>
+               <NOSSO_NUMERO>0</NOSSO_NUMERO>
+               <URL>https://www.boletobancario.com/boletofacil/img/boleto-facil-exemplo.pdf</URL>               
+               <URL_CEF>https://10.116.82.66:8010/ecobranca/SIGCB/imprimir/0627965/14000000083755579</URL_CEF>
+            </INCLUI_BOLETO>
+         </DADOS>
+      </manutencaocobrancabancaria:SERVICO_SAIDA>
+   </soapenv:Body>
+</soapenv:Envelope>

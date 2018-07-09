@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<consultacliente:SERVICO_SAIDA
+	xmlns:consultacliente="http://caixa.gov.br/sibar/consultacliente"
+	xmlns:sibar_base="http://caixa.gov.br/sibar">
+	<sibar_base:HEADER>
+		<VERSAO>1.0</VERSAO>
+		<AUTENTICACAO>MA==</AUTENTICACAO>
+		<USUARIO_SERVICO>SFECEMPD</USUARIO_SERVICO>
+		<USUARIO>C891975</USUARIO>
+		<OPERACAO>CPF</OPERACAO>
+		<INDICE>0</INDICE>
+		<SISTEMA_ORIGEM>SIFEC</SISTEMA_ORIGEM>
+		<DATA_HORA>2018-05-18T16:57:00-03:00</DATA_HORA>
+		<ID_PROCESSO>CPF</ID_PROCESSO>
+	</sibar_base:HEADER>
+	<COD_RETORNO>X5</COD_RETORNO>
+	<ORIGEM_RETORNO>RACF-SPD9CJC0</ORIGEM_RETORNO>
+	<MSG_RETORNO>(RA03) USUARIO NAO AUTORIZADO A EXECUTAR A TRANSACAO.</MSG_RETORNO>
+	<DADOS>
+		<EXCECAO>EXCECAO NO
+			BAR_CONSULTA_CLIENTE_MQ.BAR_CONSULTA_CLIENTE_SUB.CR_CLIPO170.
+			DETALHES: RecoverableException(3) - Funcao: throwableToMbException,
+			Texto Excecao: Error returned from CICS Request, Texto de Insercao(1)
+			- CTG9631E Error occurred during an interaction with CICS:
+			ECI_ERR_SECURITY_ERROR, error code: -27
+			.RecoverableException(2) - Funcao: requestData, Texto Excecao: Error returned from CICS
+			Request, Texto de Insercao(1) -
+			com.ibm.broker.nodes.cicsnodes.CICSRequestNode :
+			javax.resource.spi.SecurityException: CTG9631E Error occurred during
+			an interaction with CICS: ECI_ERR_SECURITY_ERROR, error code: -27
+			at com.ibm.connector2.cics.ECIManagedConnection.checkReturnCode(Unknown
+			Source)
+			at com.ibm.connector2.cics.ECIManagedConnection.call(Unknown Source)
+			at com.ibm.connector2.cics.ECIConnection.call(Unknown Source)
+			at com.ibm.connector2.cics.ECIInteraction.execute(Unknown Source)
+			at com.ibm.broker.cics.CICSAdapter.callCICS(CICSAdapter.java:295)
+			at
+			com.ibm.broker.nodes.cicsnodes.CICSRequestBaseNode.requestData(CICSRequestBaseNode.java:480)
+			at
+			com.ibm.broker.plugin.MbRequestTemplateNode.requestData(MbRequestTemplateNode.java:58)
+			at com.ibm.broker.plugin.MbOutputTerminal._propagate(Native Method)
+			at
+			com.ibm.broker.plugin.MbOutputTerminal.propagate(MbOutputTerminal.java:133)
+			at
+			com.ibm.broker.plugin.MbOutputTerminal.propagate(MbOutputTerminal.java:88)
+			at com.ibm.broker.jdbcnodes.RouteNode.evaluate(RouteNode.java:262)
+			at com.ibm.broker.plugin.MbNode.evaluate(MbNode.java:1452)
+			.RecoverableException(1) - Funcao:
+			ImbDataFlowNode::createExceptionList, Texto Excecao: Node throwing
+			exception, Texto de Insercao(1) -
+			BAR_CONSULTA_CLIENTE_MQ.BAR_CONSULTA_CLIENTE_SUB.CR_CLIPO170.</EXCECAO>
+	</DADOS>
+</consultacliente:SERVICO_SAIDA>
